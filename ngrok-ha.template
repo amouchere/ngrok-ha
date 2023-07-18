@@ -1,0 +1,12 @@
+version: "2"
+authtoken: <authtoken>
+
+tunnels:
+  homeassistant:
+    proto: http
+    addr:  192.168.1.21:8123
+    domain: notably-poetic-garfish.ngrok-free.app
+    basic_auth: 
+      - "<user>:<password>"
+
+    

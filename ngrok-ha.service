@@ -1,0 +1,15 @@
+[Unit]
+Description=ngrok for home assistant
+After=network.target
+
+[Service]
+ExecStart=ngrok start homeassistant --config /home/pi/ngrok-ha/ngrok-ha.yml 
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+IgnoreSIGPIPE=true
+Restart=always
+RestartSec=3
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
